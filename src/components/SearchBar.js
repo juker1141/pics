@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
   onFormSubmit = (e) => {
     e.preventDefault();
 
-    console.log(this.state.term);
+    this.props.onSubmit(this.state.term);
   }
 
   render() {
@@ -17,8 +17,8 @@ class SearchBar extends React.Component {
             <label>Image Search</label>
             <input
               type="text"
-              value={ this.state.term }
-              onChange={(e) =>  this.setState({ term: e.target.value })}
+              value={this.state.term}
+              onChange={(e) => this.setState({ term: e.target.value })}
             />
             {/* 不使用 this.onInputChange() 是因為不想讓程式一直跑render */}
           </div>
