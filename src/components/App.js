@@ -7,7 +7,7 @@ class App extends React.Component {
   state = { images: [] };
 
   onSearchSubmit = async (term) => {
-    // 因為普通的 onSearchSubmit() {} 沒有 this
+    // 因為普通的 onSearchSubmit() {} 的 this 找不到
     // 改成箭頭函式來讓他有 this
     const response = await unsplash.get('/search/photos', {
       params: { query: term }
